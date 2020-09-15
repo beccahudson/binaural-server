@@ -14,16 +14,10 @@ adminRouter
 				res.status(200).json(users);
 			})
 			.catch(next);
-	});
-    
-adminRouter
-    .route('/admin/:user_id/:id')
-    .all(requireAuth)
-    .delete(bodyParser, (req, res, next) => {
+	})
+	.delete(bodyParser, (req, res, next) => {
 		const id = req.params.id;
-        const email = req.body.email;
-        
-        console.log(id,email)
+		const email = req.body.email;
 
 		AdminService.deleteUser(req.app.get('db'), id, email)
 			.then((user) => {
@@ -35,7 +29,6 @@ adminRouter
 				res.status(204).end();
 			})
 			.catch(next);
-    });
-    
+	});
 
 module.exports = adminRouter;
