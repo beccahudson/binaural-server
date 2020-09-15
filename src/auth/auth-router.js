@@ -60,7 +60,7 @@ authRouter
   })
 
   .put(requireAuth, (req, res) => {
-    const sub = req.user.email
+    const sub = req.user.email;
     const payload = {
        id: req.user.id,
       name: req.user.name,

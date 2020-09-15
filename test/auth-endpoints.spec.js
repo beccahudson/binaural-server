@@ -97,11 +97,9 @@ describe('Auth Endpoint', function () {
       helpers.seedUsers(
         db,
         testUsers,
-        
       )
     )
-    console.log("testUsers", testUsers)
-        //PROBLEM
+  
     it(`responds 200 and JWT auth token using secret`, () => {
       const expectedToken = jwt.sign(
         { id: testUser.id, name: testUser.name },
@@ -117,7 +115,7 @@ describe('Auth Endpoint', function () {
         .set('Authorization', helpers.makeAuthHeader(testUser))
         .expect(200, {
           authToken: expectedToken,
-        })
-    })
-  })
+        });
+    });
+  });
 });
