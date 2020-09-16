@@ -49,10 +49,10 @@ describe('Admin Endpoints', () => {
 
         it('Responds 204', () => {
             const admin = testUser.id
-            const delete_email = testUsers[2].email
-            const delete_id = testUsers[2].id
+            const delete_email = testUsers[1].email
+            const delete_id = testUsers[1].id
             const expectedUsers = testUsers.filter(user => (user.id != delete_id && user.email != delete_email))
-            const toRemove = {delete_id, delete_email}
+            const toRemove = {email: delete_email}
             
             return supertest(app)
                 .delete(`/admin/${delete_id}`)
