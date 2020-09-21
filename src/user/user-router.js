@@ -98,13 +98,27 @@ userRouter
 userRouter
   .route('/:id')
   .all(requireAuth)
+  .get((req,res,next) => {
+    const {id} = req.params;
+    UserService.getUserById(req.app.get('db'),id)
+      .then((user) => {
+        if(!user){
+          return res.status(400).json({ error: { message: 'User not found/does not exist' } });
+        }
+
+        console.log(user);
+
+        return res.status(200).json(serializeUser(user));
+      })
+      .catch(next);
+  })
   .delete(bodyParser, (req, res, next) => {
     const id = req.params.id;
     UserService.deleteUser(req.app.get('db'), id)
       .then((user) => {
         if (!user) {
           return res
-            .status(404)
+            .status(400)
             .json({ error: { message: 'User not found/does not exist' } });
         }
         res.status(204).end();
@@ -176,6 +190,7 @@ userRouter
             });
         });
     }
+    next;
   });
   
 
