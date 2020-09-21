@@ -10,6 +10,10 @@ const UserService = {
     return db.select('*').from('users');
   },
 
+  getUserById(db,id) {
+    return db.select('*').from('users').where({id}).first();
+  },
+
   deleteUser(db, id) {
     return db('users').where({ id }).delete();
   },
@@ -59,6 +63,7 @@ const UserService = {
       name: xss(user.name),
       password: xss(user.password),
       admin: user.admin,
+      user_prefs: xss(user.user_prefs)
     };
   },
 
