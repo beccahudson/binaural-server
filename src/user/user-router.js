@@ -75,7 +75,6 @@ userRouter
 
           return UserService.addUser(req.app.get('db'), trimUser).then(
             (user) => {
-              console.log('HERE');
               logs.info(
                 `User created successfully. The user id is: ${user.id}.`
               );
@@ -83,7 +82,7 @@ userRouter
                 .status(201)
                 .location(
                   path.posix.join(
-                    req.originalUrl, //TODO add the heroku link
+                    req.originalUrl, 
                     `/${user.id}`
                   )
                 )
@@ -105,9 +104,6 @@ userRouter
         if(!user){
           return res.status(400).json({ error: { message: 'User not found/does not exist' } });
         }
-
-        console.log(user);
-
         return res.status(200).json(serializeUser(user));
       })
       .catch(next);
