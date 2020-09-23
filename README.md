@@ -157,4 +157,4 @@ Logs in to an existing account
 
 ## Technology
 
-Made with the Express framework. Uses postgrator to perform table migrations to SQL database and knex library to write make changes to the tables.
+Made with the Express framework, Sine-waves, and canvas. Uses postgrator to perform table migrations to SQL database and knex library to write make changes to the tables.
