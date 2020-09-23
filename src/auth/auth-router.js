@@ -55,7 +55,6 @@ authRouter
 			next(error);
 		}
 	})
-
 	.put(requireAuth, (req, res) => {
 		const sub = req.user.email;
 		const payload = {
@@ -66,5 +65,4 @@ authRouter
 			authToken: authService.createUserJwt(sub, payload),
 		});
 	});
-
 module.exports = authRouter;

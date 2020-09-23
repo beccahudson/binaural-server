@@ -36,13 +36,14 @@ function makeUsersArray() {
 	];
 }
 
-/** PROBLEM IS HERE!!!!!!!!!
+/** 
  * make a bearer token with jwt for authorization header
  * @param {object} users - contains `id`, `email`
  * @param {string} secret - used to create the JWT
  * @returns {string} - for HTTP authorization header
  */
 function makeAuthHeader(users, secret = process.env.JWT_SECRET) {
+
 	const token = jwt.sign({ id: users.id }, secret, {
 		subject: users.email,
 		expiresIn: process.env.JWT_EXPIRY,
