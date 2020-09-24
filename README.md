@@ -1,8 +1,61 @@
-ID8 by Wesley Rou
-=================
+# Binaural
 
-Live App: 
-Client Repo: https://github.com/thinkful-ei-panda/binaural-client
+## Turn On, Tune In, Drop Out
+
+Binaural generates binaural beats and audio visualizations to help users achieve altered states of consciousness.
+
+![Branding](./public/static/img/binaural-branding.png "Branding")
+
+## Screenshots
+
+### Landing Screen
+
+![Landing Screen](./public/static/img/binaural-screenshot-home.png "Landing Screen")
+
+### Binaural Beat Info
+
+![Binaural Beat Info](./public/static/img/binaural-screenshot-turn-on.png "Binaural Beat Info")
+
+### Binaural Beat Visualizer
+
+![Binaural Beat Visualizer](./public/static/img/binaural-screenshot-beat-player.png "Binaural Beat Visualizer")
+
+## Links
+
+### Live App
+https://binaural-client.vercel.app/
+
+### Client Repo
+https://github.com/thinkful-ei-panda/binaural-client
+
+### Server Repo
+https://github.com/thinkful-ei-panda/binaural-server
+
+## Technology
+
+### Front-End
+Front-End technology used for this project includes React, React Router, Web Audio API, Canvas, SineWave.js and Enzyme.
+
+### Back-End
+Back-End technology used for this project includes Express, Node, PostgreSQL, JWT, Winston, Mocha and Chai.
+
+### Languages
+Coding languages used for this project include Javascript, HTML and CSS.
+
+### UX/UI
+UX/UI designed in Adobe XD.
+
+## Design Pattern
+
+Binaural invokes a design pattern inspired by 1990s rave culture and electronic music. The typography is inspired by Icelandic musician <a href="https://www.youtube.com/watch?v=LsYVR1FO44A&list=RDLsYVR1FO44A&start_radio=1">Bjork</a>.
+
+## Test Credentials
+
+### Email
+test@test.com
+
+### Password
+Testuser1!
 
 API Endpoints:
 --------------
@@ -107,9 +160,6 @@ API Endpoints:
         - `400` if failed
 
 
-
-
-
 ### Auth Endpoints
 
 POST /api/auth/token
@@ -155,6 +205,5 @@ Logs in to an existing account
         
         ```
 
-## Technology
-
-Made with the Express framework, Sine-waves, and canvas. Uses postgrator to perform table migrations to SQL database and knex library to write make changes to the tables.
+## Credits
+Seyi Ariyo, Renata Dickenson, Rebecca Hudson, Wesley Rou, Josh Struve and Karsten Taylor
